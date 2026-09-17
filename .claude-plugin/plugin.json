@@ -1,0 +1,9 @@
+{
+  "name": "gobind",
+  "displayName": "Gobind's working style",
+  "version": "0.1.0",
+  "description": "How Gobind wants an agent to work: deterministic guards for git, secrets and dev servers, autonomous/collaborative mode with a question gate, session index that survives compaction, orchestration agents, and slash commands for handoff, recap, questions, RCA and new projects.",
+  "author": { "name": "Gobind Singh", "url": "https://github.com/theGobindSingh" },
+  "license": "MIT",
+  "keywords": ["working-style", "hooks", "guards", "orchestration", "autonomous"]
+}

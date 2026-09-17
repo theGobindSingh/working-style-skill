@@ -1,0 +1,34 @@
+<!--
+docs/status.md is the short current state. Rewrite stale lines in place; never append.
+Keep the whole file under 40 lines. Update it as part of the work, not after.
+Timestamps: ISO 8601 with offset, from `date -Iseconds`.
+-->
+
+# Status
+
+Updated: <ISO>
+
+## Now
+
+- <current state, 3 to 6 lines>
+- <what is finished and verified>
+- <what is in progress>
+
+## Blocked
+
+- <blocker, who or what unblocks it, or "nothing">
+
+## Next up
+
+1. <next task>
+2. <next task>
+
+## Decisions taken without asking
+
+| when | decision | why |
+|---|---|---|
+| <ISO> | <what was decided> | <one line> |
+
+## Handoff
+
+<!-- Fill from handoff.md.template when handing work off. Leave empty otherwise. -->

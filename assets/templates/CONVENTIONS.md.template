@@ -1,0 +1,39 @@
+# CONVENTIONS
+
+Owns how the code is written. Product lives in PRODUCT.md, look in DESIGN.md.
+
+## Files and folders
+
+- Filenames are kebab-case. <exceptions, if any>
+- A unit is a folder with an `index.ts` (or `index.tsx`) that is its only public surface.
+- Files stay near 150 lines. Past that, split by responsibility, not by line count.
+- Placement: `components/` for reusable UI with no domain knowledge; `features/` for
+  domain-specific units that compose them. <where routes, lib, hooks and data live>
+
+## Imports
+
+- Use `@/` aliases for anything outside the current folder. No deep relative paths.
+
+## Components
+
+- Server components by default. Add `"use client"` only where the component needs state,
+  effects or browser APIs, and keep that boundary as small as possible.
+
+## Styling
+
+- Tokens only. No raw colours, no raw pixel values outside the token layer.
+- Tailwind classes before the `style` prop. The `style` prop is for values that cannot be
+  a class.
+
+## Lint and types
+
+- ESLint and TypeScript strict must pass. No `any`. Never disable a rule or add an ignore
+  comment; fix the cause.
+
+## Tooling
+
+- pnpm only. Never npm or yarn. <Node version, lockfile rule>
+
+## Tests
+
+<What is tested, where tests live, how they run.>

@@ -1,0 +1,23 @@
+{
+  "skill_name": "gobind-working-style",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "the theme toggle in @src/components/theme-switcher is showing up bottom left instead of bottom right and it overlaps the footer; investigate and fix. also i have pnpm dev running already. dont touch git",
+      "expected_output": "Agent reuses the running dev server (no restart), reproduces the layout bug, finds the root cause, makes a minimal Tailwind/token-based fix (no style prop hack), verifies in a browser, runs lint/typecheck, does not commit, and gives a short recap stating what was verified.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "prompt": "okay james sent 6 more bugs (pasted below). i'm going to sleep, don't ask me questions, take decisions unless gameplay is hugely affected, and give me the new ROM in the morning. bugs: 1) egg hatches at wrong level 2) happiny wont follow 3) text box shows blank line 4) lyra dialogue repeats 5) dex count wrong after oak 6) pc box count is 30 not 18",
+      "expected_output": "Agent enters autonomous mode: no mid-task questions, plans phases, runs read-only RCA per bug first looking for shared causes, dispatches nested subagents (Opus lead, Sonnet worker, Haiku drone) with hard rules repeated verbatim in briefs, works on the feature branch only, builds and verifies a ROM with the 0.<feature>.<build>_<name>.nds naming, updates docs/status.md with ISO timestamps, and leaves a short recap with bad news first.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "starting a new nextjs project for a client's dental clinic site under ~/Programming/smilecare; set up the CLAUDE.md and folder structure the way i like, then propose what the homepage sections should be",
+      "expected_output": "Agent creates a short AGENTS.md/CLAUDE.md routing to docs/PRODUCT.md, DESIGN.md, CONVENTIONS.md; includes the working agreement (git read-only, dev server rule, two modes, ISO timestamps, tokens-only, kebab-case, folder+index, 150 LOC, pnpm); uses pnpm; does not run git init/commit; proposes homepage sections as a short list and waits for approval rather than building them.",
+      "files": []
+    }
+  ]
+}

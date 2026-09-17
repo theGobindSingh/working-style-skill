@@ -1,0 +1,35 @@
+# PRODUCT
+
+Owns what we are building. Design lives in DESIGN.md, code rules in CONVENTIONS.md.
+
+## What
+
+<One paragraph: the product, in plain words.>
+
+## Audience
+
+<Who uses it, what they already know, what they want in the first ten seconds.>
+
+## Goals
+
+<Three to five measurable goals, ranked.>
+
+## IA and sitemap
+
+<Routes as a tree. One line per route with its purpose.>
+
+## Page specs
+
+<Per page: purpose, sections in order, primary action, data it needs.>
+
+## Conversion model
+
+<What counts as a conversion, the path to it, and what we measure along it.>
+
+## Content model
+
+<Content types, their fields, where each lives (file, CMS, API) and who edits it.>
+
+## SEO
+
+<Indexability, rendering mode per route, metadata rules, structured data, canonical rules.>

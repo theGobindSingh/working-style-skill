@@ -1,0 +1,23 @@
+<!-- Body of the Handoff section in docs/status.md. Secrets redacted: never paste tokens,
+keys or .env contents here. -->
+
+**Goal:** <what the work is trying to achieve, one line>
+
+**Current state:** <where it stands right now, what is verified, what is not>
+
+**Next steps:**
+1. <step>
+2. <step>
+3. <step>
+
+**Constraints:** <rules in force: branch granted or not, files off limits, deadlines>
+
+**Gotchas:** <things that bit us or will bite the next session>
+
+**Commands to resume:**
+```bash
+<command to start the dev server or check state>
+<command to run the verification>
+```
+
+Secrets redacted. Anything that looks like a key here is a placeholder.

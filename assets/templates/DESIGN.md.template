@@ -1,0 +1,31 @@
+# DESIGN
+
+Owns how it looks and moves. Tokens are the only source of colour, spacing and type in code.
+
+## Token architecture
+
+<Where tokens live, naming scheme, primitive vs semantic layers, how dark mode inverts.>
+
+## Colour and type
+
+<Palette ramps and their semantic roles. Type scale, families, weights, line heights.>
+
+## Layout
+
+<Grid, container widths, spacing scale, breakpoints, section rhythm.>
+
+## Motion
+
+<Durations, easings, what animates and what never does. Reduced motion behaviour.>
+
+## Signature techniques
+
+<The two or three visual moves that make this product recognisable, and where they apply.>
+
+## Component catalogue
+
+<Each reusable component: name, purpose, variants, states, where it lives.>
+
+## Accessibility and reduced motion
+
+<Contrast targets, focus styles, keyboard paths, what changes under prefers-reduced-motion.>

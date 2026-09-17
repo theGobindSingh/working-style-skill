@@ -1,0 +1,52 @@
+# Brief: <TASK_TITLE>
+
+## Hard rules
+
+<!-- Verbatim, at the top. Every hard rule from CLAUDE.md / AGENTS.md and every off-limits
+host, machine, path or command it names. The subagent does not see the conversation. -->
+
+- Git is read-only. No commits, pushes, resets, stashes or branch changes.
+- Never read or print `.env` files or key files.
+- Never kill a process that serves a port. Reuse the running dev server.
+- Fix lint and type errors; never disable or skip them.
+- <PROJECT_HARD_RULE>
+- <OFF_LIMITS_HOST_PATH_OR_COMMAND>
+
+## Goal
+
+<One paragraph. What must be true when you are done.>
+
+## Verified facts
+
+- <fact, and how it was verified>
+- <fact, and how it was verified>
+
+## Files you own
+
+- <absolute path>
+- <absolute path>
+
+## Files you must not touch
+
+- <absolute path or glob>
+- Everything not listed under "Files you own".
+
+## What to verify and how
+
+- <check> : <exact command or steps>
+- <check> : <exact command or steps>
+
+## What to report
+
+Short and cited. For each item: VERIFIED (with the command or evidence), NOT VERIFIED, or
+BLOCKED. No file dumps. Bad news first. State what you assumed and what is left.
+
+## Stop and escalate when
+
+- Any choice would change scope, the visible result, or something hard to reverse.
+- The brief is wrong or impossible as written.
+- A file you need is not in "Files you own".
+- <PROJECT_SPECIFIC_TRIGGER>
+
+Escalate with `SendMessage` to your parent: the blocker, the options, your recommendation,
+then end your turn.

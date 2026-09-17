@@ -1,0 +1,24 @@
+# Recap: <TASK_TITLE>
+
+**Outcome:** <one line: done / partly done / blocked, and the headline result>
+
+## Bad news first
+
+- <anything that failed, broke, or was left unverified; or "none">
+
+## Items
+
+| item | status | evidence |
+|---|---|---|
+| <what was done> | VERIFIED | <command run and result, or file:line> |
+| <what was done> | NOT VERIFIED | <why it could not be checked> |
+| <what was done> | BLOCKED | <what blocks it and who unblocks it> |
+
+## Assumptions taken
+
+- <assumption, and what would change if it is wrong>
+
+## What is left
+
+1. <remaining step>
+2. <remaining step>

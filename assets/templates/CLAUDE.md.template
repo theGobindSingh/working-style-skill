@@ -1,0 +1,68 @@
+# CLAUDE.md
+
+## What this is
+
+**<PROJECT_NAME>.** <ONE_PARAGRAPH: what it is, who it is for, what "done" looks like for the
+project as a whole.>
+
+## Read this first
+
+- `docs/status.md` is the short current state: what is done, blocked, next. Read it before
+  planning any work. Keep it current and keep it short.
+- `docs/log.md` is the history, newest first. Read it only when you need the why behind a
+  decision. It only grows; do not read it by default.
+
+Update both as part of the work, not as an afterthought.
+
+Timestamps in any doc are full ISO 8601 with time and offset, taken from `date -Iseconds` at
+the moment of writing, for example `2026-09-13T01:36:05+05:30`. Never a bare date.
+
+## Docs index
+
+| Doc | Owns |
+|---|---|
+| `docs/PRODUCT.md` | What we are building: audience, goals, pages, content, SEO |
+| `docs/DESIGN.md` | How it looks: tokens, type, colour, layout, motion, components |
+| `docs/CONVENTIONS.md` | How it is coded: files, folders, styling, lint, tooling |
+| `docs/AUTOMATIONS.md` | How it runs: scripts, hooks, CI, deploy |
+
+Precedence: the owner's instruction > these docs > framework or tool defaults. Each doc owns
+its domain; do not restate one doc's rules in another. If two docs conflict, or a doc
+conflicts with the code, flag it in your recap and do not silently pick one.
+
+## Hard rules
+
+- Git is read-only unless the owner grants a branch in this conversation. Never main or
+  master. No commits, pushes, resets, stashes or branch changes without that grant.
+- Never read, print or copy `.env` files or key files.
+- Never kill the running dev server or any process serving a port. Reuse it.
+- <OFF_LIMITS_PATH_OR_DIR: for example "never modify `data/original/`">
+- <OFF_LIMITS_HOST_OR_MACHINE: for example "never ssh to <host>">
+- <OFF_LIMITS_COMMAND: for example "never run `<command>`">
+
+## Commands
+
+```bash
+pnpm install        # dependencies (pnpm only, never npm or yarn)
+pnpm dev            # dev server on <PORT>; reuse it if already running
+pnpm build          # production build
+pnpm lint           # eslint
+pnpm typecheck      # tsc --noEmit
+<EXTRA_COMMAND>     # <what it does>
+```
+
+## Working agreement
+
+The gobind plugin governs how the agent works: modes, questions, git, verification, docs. Its
+rules apply here.
+
+## Definition of done
+
+- `pnpm build`, `pnpm lint` and `pnpm typecheck` are green.
+- The change is verified in the real runtime (browser, CLI, or the actual target), not only
+  in tests or by reading the code.
+- Docs updated in the same change: `docs/status.md` always; `docs/log.md` when a decision,
+  reversal, blocker or surprise happened; the domain doc when its rules changed.
+- Git untouched unless the owner asked.
+- Recap lists every item as VERIFIED (with the command or evidence), NOT VERIFIED, or
+  BLOCKED. Bad news first.

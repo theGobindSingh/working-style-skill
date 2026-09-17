@@ -1,0 +1,17 @@
+# Questions: <TASK_TITLE>
+
+<!-- One batch. Most structural first. Every question carries the option I would take. -->
+
+1. **<Question>**
+   - I would: <option> because <reason>.
+   - Stakes: <one line: what changes if this goes the other way>.
+
+2. **<Question>**
+   - I would: <option> because <reason>.
+   - Stakes: <one line>.
+
+3. **<Question>**
+   - I would: <option> because <reason>.
+   - Stakes: <one line>.
+
+If I hear nothing, I proceed with the recommendations above.

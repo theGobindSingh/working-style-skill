@@ -1,0 +1,19 @@
+# Log
+
+Newest first. Each entry records a decision, a reversal, a blocker hit or cleared, a surprise
+that changes the plan, or a piece of work finished or abandoned and why. Do not log typo
+fixes, formatting, lint cleanups or doc wording. A log full of trivia is a log nobody reads.
+
+Timestamps: full ISO 8601 with offset, from `date -Iseconds`.
+
+## <ISO timestamp> — <title>
+
+- What: <what was done or decided, one or two lines>
+- Why: <the reason a future session would otherwise miss>
+- Evidence: <command, output, link or file path that backs it up>
+
+## <ISO timestamp> — <title>
+
+- What:
+- Why:
+- Evidence:
