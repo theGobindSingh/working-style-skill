@@ -61,7 +61,7 @@ MODE="$(state_get '.mode')"; SC="$(state_get '.stop_condition')"; GRANT="$(state
     # `git status --porcelain` prints one line per changed or untracked file.
     # wc -l counts them; tr strips the padding some wc versions add.
     b="$(current_branch)"; n="$(git -C "$CWD" status --porcelain 2>/dev/null | wc -l | tr -d ' ')"
-    echo "[gobind] branch: $b | uncommitted files: $n | git: $( [ -n "$GRANT" ] && echo "granted on '$GRANT' (main locked)" || echo "READ-ONLY (no commit/pull/push)")"
+    echo "[gobind] branch: $b | uncommitted files: $n | git: $( [ -n "$GRANT" ] && echo "granted on '$GRANT'" || echo "only when asked (no commit/pull/push on your own)")"
   fi
   # Show the head of the project's state doc. docs/status.md is preferred;
   # docs/STATE.md is the fallback. `break` stops after the first one found.
@@ -78,7 +78,7 @@ MODE="$(state_get '.mode')"; SC="$(state_get '.stop_condition')"; GRANT="$(state
     echo "[gobind] a Handoff section exists in docs/status.md: read it before planning."
   fi
   # The five core rules. They stay on one line to respect the 20-line budget.
-  echo "[gobind] rules: 1) git read-only unless granted  2) questions once, up front; none mid-task in autonomous mode  3) root cause before fix, evidence for every claim  4) smallest diff, reuse before adding, fix lint never silence it  5) verify in the real runtime; recap says VERIFIED / NOT VERIFIED / BLOCKED"
+  echo "[gobind] rules: 1) no git changes unless he asks  2) questions once, up front; none mid-task in autonomous mode  3) root cause before fix, evidence for every claim  4) smallest diff, reuse before adding, fix lint never silence it  5) verify in the real runtime; recap says VERIFIED / NOT VERIFIED / BLOCKED"
   # Phrases that prompt-reminder.sh recognises, and the available commands.
   echo "[gobind] mode phrases: 'going to sleep' / 'full autonomous' -> autonomous; 'i'm back' / 'normal mode' -> collab. Commands: /gobind:mode /gobind:recap /gobind:handoff /gobind:questions /gobind:rca"
   # After compaction the model has lost detail from earlier in the session.

@@ -8,12 +8,12 @@ overnight. The tree below is what he set up in `james-game/.claude/agents/` and
 
 ## Roles
 
-| Level | Agent | Model | Does |
-|---|---|---|---|
-| 0 | main session | the session model | Plans the whole job, splits it into phases, dispatches one lead per phase, judges reports, decides, recaps to the user. Does not implement, research or verify in its own context. |
-| 1 | `phase-lead` | Opus/Sonnet | Owns one phase end to end. Re-plans it as a task list, delegates every task, verifies, reports. Opus for complex, long-runnig tasks. |
-| 2 | `worker` | Sonnet | One task needing judgement: a code edit, a debugging pass, a small design, interpreting results. Hands its own mindless sub-steps to drones. |
-| 3 | `drone` | Haiku | Mindless, no decisions: read a named file and answer one question, grep a named dir, run one given command, fetch given URLs, check a hash. Cannot edit. |
+| Level | Agent        | Model             | Does                                                                                                                                                                               |
+| ----- | ------------ | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0     | main session | the session model | Plans the whole job, splits it into phases, dispatches one lead per phase, judges reports, decides, recaps to the user. Does not implement, research or verify in its own context. |
+| 1     | `phase-lead` | Opus/Sonnet       | Owns one phase end to end. Re-plans it as a task list, delegates every task, verifies, reports. Opus for complex, long-runnig tasks.                                               |
+| 2     | `worker`     | Sonnet            | One task needing judgement: a code edit, a debugging pass, a small design, interpreting results. Hands its own mindless sub-steps to drones.                                       |
+| 3     | `drone`      | Haiku             | Mindless, no decisions: read a named file and answer one question, grep a named dir, run one given command, fetch given URLs, check a hash. Cannot edit.                           |
 
 Rule of thumb: if the task can be done by following literal instructions with no judgement,
 it is a drone; if it needs any thinking, it is a worker. Never hand a drone a decision. Never

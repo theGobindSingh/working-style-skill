@@ -1,7 +1,0 @@
-{
-  "name": "gobind-tools",
-  "owner": { "name": "Gobind Singh Matharoo" },
-  "plugins": [
-    { "name": "gobind", "source": "./", "description": "Gobind's working style: guards, modes, commands, agents.", "version": "0.1.0" }
-  ]
-}

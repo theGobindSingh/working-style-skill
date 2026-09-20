@@ -106,7 +106,7 @@ SC="$(state_get '.stop_condition')"
 line="[gobind] $(now_iso) | mode: $MODE"
 # Mode-specific reminder appended to the same line.
 [ "$MODE" = "autonomous" ] && line="$line | no questions (stop-condition: ${SC:-none named})"
-[ "$MODE" = "collab" ] && line="$line | propose before non-trivial work; git read-only; short reply, outcome first"
+[ "$MODE" = "collab" ] && line="$line | propose before non-trivial work; no git unless asked; short reply, outcome first"
 # After a switch, add the explanation as a second line.
 [ -n "$note" ] && line="$line
 [gobind] $note"

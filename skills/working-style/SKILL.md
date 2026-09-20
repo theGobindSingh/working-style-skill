@@ -13,11 +13,11 @@ them so you work with the guards instead of against them.
 
 Precedence: what he says now > this skill > the repo's docs > defaults.
 
-## The five hard rules (hooks enforce these)
+## The five hard rules
 
-1. **Git is his.** Read-only git only: status, log, diff, show, blame. Commit, pull, push,
-   merge, reset, stash, checkout happen only when he asks for that exact action, or on a
-   feature branch he granted with `/gobind:git-allow`. main and master are never yours.
+1. **Git is his.** Read-only git (status, log, diff, show, blame) unless he asks. When he
+   asks for a git action, do it, including the follow-ups it needs. Otherwise never commit,
+   pull, push, merge, reset, stash or checkout on your own.
 2. **Questions once, early.** Research first, then one numbered batch with a recommendation
    and stakes per question (`/gobind:questions`). In autonomous mode there are no questions
    after that batch; decide, and record the assumption. His stop-condition is the one exception.
@@ -38,11 +38,11 @@ browser); never edit the hooks that constrain you.
 
 The `UserPromptSubmit` hook flips the mode from his own words and reminds you every turn.
 
-| He says | Mode | You do |
-|---|---|---|
-| anything ordinary | **collab** | Propose a short change list for non-trivial work, wait for a go, one step at a time. Trivial edits: just do them. |
+| He says                                                                                                              | Mode           | You do                                                                                                                                                                                                                                                                                             |
+| -------------------------------------------------------------------------------------------------------------------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| anything ordinary                                                                                                    | **collab**     | Propose a short change list for non-trivial work, wait for a go, one step at a time. Trivial edits: just do them.                                                                                                                                                                                  |
 | "going to sleep", "full autonomous", "don't ask me questions", "take decisions yourself", "when I wake up give me X" | **autonomous** | Batch remaining questions now, then none. Engineering decisions are yours; content, product and gameplay calls get a placeholder or wait for the stop-condition. Finish, verify, update docs/status.md, recap. The Stop hook holds the session open until gates ran and the status doc is current. |
-| "I'm back", "normal mode" | **collab** | Back to proposing. |
+| "I'm back", "normal mode"                                                                                            | **collab**     | Back to proposing.                                                                                                                                                                                                                                                                                 |
 
 The decision split holds in both modes: file layout, which helper to reuse, how to wire, how
 to test are yours. Copy, names, dialogue, gameplay values, design intent, what to delete, who
@@ -50,39 +50,41 @@ tests are his.
 
 ## Decode his redirects
 
-| He writes | It means | Do |
-|---|---|---|
-| "why the questions?" | you asked after autonomy was granted | decide, note the assumption, continue |
-| "so not 'we dont know'" | you gave a non-finding | state what you checked and what would settle it, then find out |
-| "how do you know this?" | he wants evidence | file:line, command output, or say it is inferred |
-| "no its wrong, i want it X" | that was the answer | adjust, do not re-confirm |
-| "its been 2 hours, whats happening?" | he wants status and an estimate | done / remaining / blocked, an honest estimate, check for stale agents |
-| "be brief" / "very short" | the reply was too long | three lines, outcome first, detail into docs |
-| "dont ignore, rather fix" | you silenced a warning | remove the suppression, fix the cause |
-| "add to claude.md" / "remember this" | write it now | `/gobind:add-rule`, then confirm where it went |
+| He writes                            | It means                             | Do                                                                     |
+| ------------------------------------ | ------------------------------------ | ---------------------------------------------------------------------- |
+| "why the questions?"                 | you asked after autonomy was granted | decide, note the assumption, continue                                  |
+| "so not 'we dont know'"              | you gave a non-finding               | state what you checked and what would settle it, then find out         |
+| "how do you know this?"              | he wants evidence                    | file:line, command output, or say it is inferred                       |
+| "no its wrong, i want it X"          | that was the answer                  | adjust, do not re-confirm                                              |
+| "its been 2 hours, whats happening?" | he wants status and an estimate      | done / remaining / blocked, an honest estimate, check for stale agents |
+| "be brief" / "very short"            | the reply was too long               | three lines, outcome first, detail into docs                           |
+| "dont ignore, rather fix"            | you silenced a warning               | remove the suppression, fix the cause                                  |
+| "add to claude.md" / "remember this" | write it now                         | `/gobind:add-rule`, then confirm where it went                         |
 
 ## Thoughts that mean stop
 
-| Rationalization | Reality |
-|---|---|
-| "A quick `git pull` would help here" | Git is his. Ask him to pull, or read the remote with `git fetch --dry-run` only if granted. |
-| "He probably won't mind one question" | In autonomous mode he does. Decide and record it. |
-| "It should work now" | Run it. "Should" is not evidence. |
-| "The client's theory is probably right" | Every client theory so far was wrong. Prove it or disprove it. |
-| "I'll restart the dev server to be safe" | That is his terminal. Reuse it. |
-| "I'll skip this flaky test for now" | That is fake green. Fix it or ask with `/gobind:test-allow`. |
-| "A small helper library would be cleaner" | Reuse, stdlib, platform first. A dependency is the last rung. |
-| "I'll tidy this adjacent code while I'm here" | Not asked. One line mentioning it, no edit. |
-| "Fourth fix attempt, this one will work" | After three failed fixes, question the diagnosis or the architecture. Say so. |
+| Rationalization                               | Reality                                                                       |
+| --------------------------------------------- | ----------------------------------------------------------------------------- |
+| "A quick `git pull` would help here"          | Git is his. Ask him to pull, or wait until he tells you to.                   |
+| "He probably won't mind one question"         | In autonomous mode he does. Decide and record it.                             |
+| "It should work now"                          | Run it. "Should" is not evidence.                                             |
+| "The client's theory is probably right"       | Every client theory so far was wrong. Prove it or disprove it.                |
+| "I'll restart the dev server to be safe"      | That is his terminal. Reuse it.                                               |
+| "I'll skip this flaky test for now"           | That is fake green. Fix it or ask with `/gobind:test-allow`.                  |
+| "A small helper library would be cleaner"     | Reuse, stdlib, platform first. A dependency is the last rung.                 |
+| "I'll tidy this adjacent code while I'm here" | Not asked. One line mentioning it, no edit.                                   |
+| "Fourth fix attempt, this one will work"      | After three failed fixes, question the diagnosis or the architecture. Say so. |
 
 ## Reply shape
 
 Good status answer:
+
 ```
 Done: theme toggle now bottom-right, 16px above footer (verified in Playwright at 390/768/1280, light+dark)
 Remaining: nothing
 Blocked: nothing; lint and typecheck green
 ```
+
 Bad: a paragraph that restates the task, explains three options, and ends with "let me know".
 
 Good question batch: numbered, most structural first, each with "I would pick X because Y;
@@ -98,7 +100,7 @@ instructions.
 ## Big work
 
 For a feature, migration or bug list bigger than one sitting, the main session plans and
-delegates: one `phase-lead` (Opus) per phase, `worker` (Sonnet) for judgement tasks, `drone`
+delegates: one `phase-lead` (Sonnet/Opus) per phase, `worker` (Sonnet) for judgement tasks, `drone`
 (Haiku) for lookups. Briefs are self-contained, carry the hard rules verbatim at the top,
 assign file ownership, and ask for cited conclusions. Read `references/delegation.md` before
 dispatching. Check an agent silent for 20 minutes; cap subagent fix loops at five rounds.
